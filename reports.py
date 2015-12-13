@@ -76,17 +76,16 @@ List of all English articles; <onlyinclude>{0}</onlyinclude> in total. Data as o
     def allArticlesEn(self, pagetitle, langs, blacklist, summ):
 
         def isGoodTitle(title):
-            if title in blacklist:
-                return False
-            badguys = [ 'OTFWH', 'titles', 'Archive', 'Header', 'Footer', 'diff' ]
-            badguys.extend(langs)
-            for bad in badguys:
-                if title.endswith('/' + bad):
-                    return False
-            if title.endswith('/prop'):
-                return False
-
-            return True # Otherwise, he's clean.
+            pages = [ 'WebAPI ']
+            prefixes = [ 'WebAPI ']
+            suffixes = [ 'OTFWH', 'titles', 'Archive', 'Header', 'Footer', 'diff', 'prop' ]
+            suffixes.extend(langs) # This adds 'es', 'fr', 'de', etc to the suffixes
+            return not (
+                title in pages
+                or title in blacklist
+                or any(title.startswith(prefix + '/') for prefix in prefixes)
+                or any(title.endswith('/' + suffix) for suffix in suffixes)
+            )
 
         params = {
             'action': 'query',
