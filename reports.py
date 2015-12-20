@@ -54,7 +54,7 @@ List of all English articles; <onlyinclude>{0}</onlyinclude> in total. Data as o
 ''',
             'missingArticles': u'''Pages missing in {{{{lang info|{0}}}}}: \'''<onlyinclude>{1}</onlyinclude>\''' in total. Data as of {2}.
 
-'''Notice:''' Please do not translate any of the articles in the [[WebAPI]] namespace, as the language is very technical and can lead to loss of context and meaning.
+'''Notice:\''' Please do not translate any of the articles in the [[WebAPI]] namespace, as the language is very technical and can lead to loss of context and meaning.
 
 ; See also
 * [[Project:Reports/All articles/{0}|All articles in {{{{lang name|name|{0}}}}}]]
